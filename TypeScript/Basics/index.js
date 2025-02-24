@@ -1,66 +1,43 @@
-var greet = "Jai Shree Radhe";
-console.log(greet);
-var num = 5;
-console.log(num);
-var str = "Radhe Radhe";
-console.log(str);
-var flag = true;
-console.log(flag);
-// let a : number = 5;
-// a = "apple" // Error -> Type 'string' is not assignable to type 'number'
-// To solved this error used multiple datatype
-var a = 5; // (| -> union by using this i put multiple datatype)
-console.log(a);
-a = "apple";
-console.log(a);
-// Function
-// Basic Function with Types
-function greetFn(name, age) {
-    return "Your name is ".concat(name, " and age is ").concat(age);
-}
-console.log(greetFn("Soumya", 22));
-// Function with Optional Parameters
-function greetFn1(name, age) {
-    return age ? "Your name is ".concat(name, " and age is ").concat(age) : "Your name is ".concat(name);
-    // The ? after age means it is optional.
-    // If age is provided, it includes it in the message.
-}
-console.log(greetFn1("Soumya", 22));
-console.log(greetFn1("Soumya"));
-// Function with Default Parameters
-function multiply(a, b) {
-    if (b === void 0) { b = 5; }
-    return a * b;
-}
-console.log(multiply(5, 10));
-console.log(multiply(5));
-// Function with Union Types
-function format(input) {
-    return "Formatted: ".concat(input);
-}
-console.log(format("abc"));
-console.log(format(100));
-// Function with Return Type void
-function logMessage(message) {
-    console.log(message);
-}
-logMessage("Radhe Radhe");
-// Arrow Function in TypeScript
-var square = function (x) {
-    return x * x;
+// Installing -> npm i -g typescript
+// Version -> tsc -v
+// Run -> tsc filename
+var person1 = { name: "Soumyajit", age: 22, isStudent: true };
+console.log(person1.name);
+var user = {
+    name: "Soumyajit",
+    sayHello: function () { return "Hello, Welcome!"; }
+    // sayHello: () => {
+    //     return `Hello, ${this.name}` ; // Arrow functions do not have their own this
+    // }
+    // sayHello: function () {
+    //     return `Hello, ${this.name}`;
+    // }
+    // sayHello: function () {
+    //     const arrowfn = () => {
+    //         return `Hello, ${this.name}`; // Arrow function inherits 'this' from the regular function
+    //     }
+    //     return arrowfn(); // Must return the result to satisfy the interface
+    // }
 };
-console.log(square(3));
-// Arrays
-var numArr = [1, 2, 3, 4, 5];
-var strArr = ['abc', 'def', 'ghi'];
-// number[] → Array of numbers
-// string[] → Array of strings
-for (var i = 0; i < numArr.length; i++) {
-    console.log(numArr[i]);
+console.log(user.sayHello());
+// Here, Container<T> is a generic type that can hold any type (T).
+var stringContainer = { value: "Hello" };
+var numberContainer = { value: 22 };
+console.log(stringContainer.value);
+console.log(numberContainer.value);
+// Generic Function
+function identity(value) {
+    return value;
 }
-// Array of Multiple Types (Union)
-var mixed = [1, "two", 3, "four"];
-// This array can contain both number and string.
-for (var i = 0; i < mixed.length; i++) {
-    console.log(mixed[i]);
+console.log(identity("Hello"));
+console.log(identity(100));
+// Generic Function with Multiple Types
+function combine(a, b) {
+    return "".concat(a, " age is ").concat(b);
 }
+console.log(combine("Alice", 100));
+// Generic Arrow Function
+var identityArrow = function (value) {
+    return value;
+};
+console.log(identityArrow("Soumyajit"));
