@@ -202,46 +202,46 @@
 
 
 
-// Interface
-interface Person {
-    readonly name: string;
-    age: number;
-    isStudent?: boolean;
-}
+// // Interface
+// interface Person {
+//     readonly name: string;
+//     age: number;
+//     isStudent?: boolean;
+// }
 
-let person1: Person = { name: "Soumyajit", age: 22, isStudent: true };
-console.log(person1.name);
-// person1.name = "Rahul"; // Cannot assign to 'name' because it is a read-only property.
+// let person1: Person = { name: "Soumyajit", age: 22, isStudent: true };
+// console.log(person1.name);
+// // person1.name = "Rahul"; // Cannot assign to 'name' because it is a read-only property.
 
-interface Greet {
-    name: string;
-    // sayHello: function(): string // This is incorrect syntax! TypeScript does not allow using function() as a type inside an interface.
-    // sayHello(): string; // This is how you define a regular function in an interface
-    sayHello: () => string;
-}
+// interface Greet {
+//     name: string;
+//     // sayHello: function(): string // This is incorrect syntax! TypeScript does not allow using function() as a type inside an interface.
+//     // sayHello(): string; // This is how you define a regular function in an interface
+//     sayHello: () => string;
+// }
 
-let user: Greet = {
-    name: "Soumyajit",
+// let user: Greet = {
+//     name: "Soumyajit",
 
-    sayHello: () => "Hello, Welcome!"
+//     sayHello: () => "Hello, Welcome!"
 
-    // sayHello: () => {
-    //     return `Hello, ${this.name}` ; // Arrow functions do not have their own this
-    // }
+//     // sayHello: () => {
+//     //     return `Hello, ${this.name}` ; // Arrow functions do not have their own this
+//     // }
 
-    // sayHello: function () {
-    //     return `Hello, ${this.name}`;
-    // }
+//     // sayHello: function () {
+//     //     return `Hello, ${this.name}`;
+//     // }
 
-    // sayHello: function () {
-    //     const arrowfn = () => {
-    //         return `Hello, ${this.name}`; // Arrow function inherits 'this' from the regular function
-    //     }
-    //     return arrowfn(); // Must return the result to satisfy the interface
-    // }
-}
+//     // sayHello: function () {
+//     //     const arrowfn = () => {
+//     //         return `Hello, ${this.name}`; // Arrow function inherits 'this' from the regular function
+//     //     }
+//     //     return arrowfn(); // Must return the result to satisfy the interface
+//     // }
+// }
 
-console.log(user.sayHello());
+// console.log(user.sayHello());
 
 
 // Generic Types
