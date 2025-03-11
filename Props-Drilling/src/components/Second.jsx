@@ -12,3 +12,12 @@ const Second = ({ name }) => {
 }
 
 export default Second
+
+
+// How Props Work Internally
+
+// When you write:
+{/* <Third parentName={name} /> */ }
+
+// React internally converts this to:
+// const props = { parentName: name };
