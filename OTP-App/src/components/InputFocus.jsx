@@ -16,8 +16,8 @@ const InputFocus = () => {
 
     return (
         <div>
-            <input type="text" placeholder='Enter Name' ref={inputRef} />
-            <button onClick={handleInputFocus}>Search</button>
+            <input type="text" ref={inputRef} />
+            <button onClick={handleInputFocus}>Focus Input</button>
         </div>
     )
 }
